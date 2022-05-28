@@ -5,20 +5,21 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { HomePage } from './components/home';
 import { ProfilePage } from './components/profile';
+import { RootStackParamList } from './types/navigation-types';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen
-          name="Home"
+          name='Home'
           component={HomePage}
           options={{ title: 'Welcome' }}
         />
-        <Stack.Screen name="Profile" component={ProfilePage} />
+        <Stack.Screen name='Profile' component={ProfilePage} initialParams={{ name : "Nom"}}/>
       </Stack.Navigator>
 
     </NavigationContainer>
