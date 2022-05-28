@@ -3,6 +3,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { AuthenticationPage } from './components/authentication';
+import { CalendarPage } from './components/calendar';
 import { HomePage } from './components/home';
 import { ProfilePage } from './components/profile';
 import { RootStackParamList } from './types/navigation-types';
@@ -14,23 +16,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen
-          name='Home'
-          component={HomePage}
-          options={{ title: 'Welcome' }}
-        />
-        <Stack.Screen name='Profile' component={ProfilePage} initialParams={{ name : "Nom"}}/>
+        <Stack.Screen name='Home' component={HomePage} options={{ title: 'Welcome' }} />
+        <Stack.Screen name='Profile' component={ProfilePage} initialParams={{ name: "Nom" }} />
+        <Stack.Screen name='Authentication' component={AuthenticationPage} />
+        <Stack.Screen name='Calendar' component={CalendarPage} />
       </Stack.Navigator>
 
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

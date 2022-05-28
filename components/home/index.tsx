@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Text, View } from 'react-native';
-import { HomeProps } from "../types/navigation-types";
+import { HomeProps } from "../../types/navigation-types";
 
 export const HomePage = ({navigation}: HomeProps) => {
 
