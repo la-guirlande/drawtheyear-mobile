@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Text, View } from 'react-native';
+import { HomeProps } from "../types/navigation-types";
 
-export const HomePage: React.FC = ({navigation}) => {
+export const HomePage = ({navigation}: HomeProps) => {
 
     const goToProfilePage = () => {
         navigation.navigate('Profile', {name: "Miki"})

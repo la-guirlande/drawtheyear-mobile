@@ -1,7 +1,8 @@
 import React from "react";
 import { Text, View } from 'react-native';
+import { ProfileProps } from "../types/navigation-types";
 
-export const ProfilePage: React.FC = ({navigation, route}) => {
+export const ProfilePage = ({navigation, route}: ProfileProps) => {
 
     return (
         <View>
