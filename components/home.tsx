@@ -1,11 +1,16 @@
 import React from "react";
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 
-export const HomePage: React.FC = () => {
+export const HomePage: React.FC = ({navigation}) => {
+
+    const goToProfilePage = () => {
+        navigation.navigate('Profile', {name: "Miki"})
+    }
 
     return (
         <View>
-            <Text>TOI</Text>
+            <Text>Home Page</Text>
+            <Button title="Profil" onPress={() => goToProfilePage()}/>
         </View>
     )
 }
